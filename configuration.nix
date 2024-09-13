@@ -117,11 +117,15 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   alacritty
+  kitty
   zellij
   bat
   btop
   nushell
   starship
+
+  floorp
+  wofi
 
   python3
   ocaml
