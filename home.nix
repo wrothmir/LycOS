@@ -52,14 +52,19 @@
   #  /etc/profiles/per-user/nooodlesoup/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "neovim";
   };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
   programs.git = {
     enable = true;
     userEmail = "vineetagarwal2402@gmail.com";
     userName = "Vineet Agarwal";
+  };
+
+  programs.waybar = {
+    enable = true;
   };
 }
