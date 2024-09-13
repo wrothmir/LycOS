@@ -106,8 +106,6 @@
   # Enable Git
   programs.git = {
     enable = true;
-    userName = "nooodle-soup";
-    userEmail = "vineetagarwal2402@gmail.com";
   };
 
 
