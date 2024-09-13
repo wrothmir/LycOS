@@ -125,7 +125,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   alacritty
-  kitty
   zellij
   bat
   btop
