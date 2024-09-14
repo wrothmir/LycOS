@@ -26,7 +26,10 @@
     starship
 
     floorp
+    discord
+
     wofi
+    brightnessctl
 
     python3
     ocaml
