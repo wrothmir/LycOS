@@ -32,8 +32,6 @@
 
     (nerdfonts.override { fonts = [ "JetBrainsMono" "DroidSansMono" "Monoid"]; })
 
-    alacritty
-    zellij
     bat
     btop
     nushell
@@ -41,6 +39,7 @@
     wofi
     libnotify
     brightnessctl
+    eww
 
     floorp
     discord
