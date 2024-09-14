@@ -37,6 +37,7 @@
     wofi
     mako
     rofi
+    libnotify
     brightnessctl
 
     floorp
