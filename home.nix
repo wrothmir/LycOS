@@ -6,6 +6,8 @@
     ./modules/neovim/neovim.nix
     ./modules/hyprland/hyprland.nix
     ./modules/zellij/zellij.nix
+    ./modules/mako/mako.nix
+    ./modules/alacritty/alacritty.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -35,7 +37,6 @@
     nushell
     starship
     wofi
-    mako
     rofi
     libnotify
     brightnessctl
