@@ -1,7 +1,6 @@
 {
   "layer":"bottom",
   "modules-left":[
-    "custom/wsno",
     "hyprland/window"
   ],
   "modules-right":[
@@ -13,7 +12,7 @@
     "clock"
   ],
   "custom/wsno":{
-    "exec":"./workspaceno";
+    "exec":"./workspaceno",
     "restart-interval":1
   },
   "hyprland/window":{
