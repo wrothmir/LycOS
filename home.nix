@@ -19,12 +19,11 @@
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
   fonts.fontconfig.enable = true;
-  home.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" "DroidSansMono" ]; })
-  ];
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+
+    (nerdfonts.override { fonts = [ "JetBrainsMono" "DroidSansMono" ]; })
 
     alacritty
     zellij
