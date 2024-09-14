@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./modules/waybar/waybar.nix
+  ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "nooodlesoup";
@@ -48,10 +51,6 @@
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
-    ".config/waybar/" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/pyros/modules/waybar";
-      recursive = true;
-    };
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
@@ -88,10 +87,6 @@
     enable = true;
     userEmail = "vineetagarwal2402@gmail.com";
     userName = "Vineet Agarwal";
-  };
-
-  programs.waybar = {
-    enable = true;
   };
 
   programs.neovim = {
