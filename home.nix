@@ -49,7 +49,7 @@
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
     ".config/waybar/" = {
-      source = "${config.home.homeDirectory}/Documents/pyros/modules/waybar";
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/pyros/modules/waybar";
       recursive = true;
     };
 
