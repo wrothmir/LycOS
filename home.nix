@@ -49,7 +49,7 @@
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
     ".config/waybar/" = {
-      source = "./modules/waybar";
+      source = "${config.home.homeDirectory}/Documents/pyros/modules/waybar";
       recursive = true;
     };
 
