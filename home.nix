@@ -43,6 +43,7 @@
     opam
     dune_3
     gcc
+    cargo
   ];
 
   nixpkgs.config.allowUnfree = true;
