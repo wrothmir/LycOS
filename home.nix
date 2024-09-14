@@ -19,7 +19,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    (pkgs.nerdfonts.override { fonts = [ "Monoid" ]; })
 
     alacritty
     zellij
@@ -124,5 +123,9 @@
       };
 
     };
+  };
+
+  programs.starship = {
+    enable = true;
   };
 }
