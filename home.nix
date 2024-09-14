@@ -123,9 +123,6 @@
         save_to_clipboard = true;
       };
 
-      shell = {
-        program = 'zsh'
-      };
     };
   };
 }

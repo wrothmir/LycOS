@@ -89,6 +89,7 @@
     packages = with pkgs; [
     #  thunderbird
     ];
+    shell = zsh;
   };
 
   home-manager = {
@@ -105,22 +106,8 @@
   programs.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    # make sure to also set the portal package, so that they are in sync
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
-
-  # Enable Neovim
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    vimAlias = true;
-  };
-
-  # Enable Git
-  programs.git = {
-    enable = true;
-  };
-
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -134,19 +121,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  alacritty
-  zellij
-  bat
-  btop
-  nushell
-  starship
-
-  floorp
-  wofi
-
-  python3
-  ocaml
-  gcc
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
