@@ -6,7 +6,7 @@
   };
 
   home.file = {
-    ".config/eww/eww" = { 
+    ".config/eww" = { 
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/PyrOS/modules/eww/config-eww"; 
       recursive = true;
     };
