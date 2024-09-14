@@ -3,7 +3,7 @@
 {
   programs.eww = {
     enable = true;
-    configDir = "./config-eww/";
+    configDir = "${config.home.homeDirectory}/PyrOS/modules/eww/config-eww/";
   };
 
   # home.file = {
