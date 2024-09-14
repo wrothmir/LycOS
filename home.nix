@@ -19,22 +19,24 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    (pkgs.nerdfonts.override { fonts = [ "Monoid" "DroidSansMono" ]; })
+    (pkgs.nerdfonts.override { fonts = [ "Monoid" ]; })
+
     alacritty
     zellij
     bat
     btop
     nushell
     starship
+    wofi
+    brightnessctl
 
     floorp
     discord
 
-    wofi
-    brightnessctl
-
     python3
     ocaml
+    opam
+    dune_3
     gcc
   ];
 
@@ -95,4 +97,35 @@
     vimAlias = true;
   };
 
+  programs.zsh = {
+    enable = true;
+  };
+
+  programs.alacritty = {
+    enable = true;
+    settings = {
+      window = {
+        decorations = "None";
+        opacity = 1;
+        startup_mode = "Maximized";
+        padding = { x = 10; y = 4; };
+      };
+
+      font = {
+        size = 12;
+        normal = {
+	  family = "Monoid";
+	  style = "Regular";
+	};
+      };
+
+      selection = {
+        save_to_clipboard = true;
+      };
+
+      shell = {
+        program = 'zsh'
+      };
+    };
+  };
 }
