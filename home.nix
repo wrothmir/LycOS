@@ -40,6 +40,7 @@
     libnotify
     brightnessctl
     eww
+    swww
 
     floorp
     discord
