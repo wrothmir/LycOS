@@ -35,6 +35,8 @@
     nushell
     starship
     wofi
+    mako
+    rofi
     brightnessctl
 
     floorp
