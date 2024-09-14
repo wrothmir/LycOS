@@ -65,7 +65,7 @@
   #  /etc/profiles/per-user/nooodlesoup/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    EDITOR = "neovim";
+    # EDITOR = "neovim";
     TERMINAL = "alacritty";
   };
 
