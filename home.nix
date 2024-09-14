@@ -37,7 +37,6 @@
     nushell
     starship
     wofi
-    rofi
     libnotify
     brightnessctl
 
@@ -87,7 +86,7 @@
   #
   home.sessionVariables = {
     # EDITOR = "neovim";
-    TERMINAL = "alacritty";
+    TERM = "alacritty";
   };
 
   # Let Home Manager install and manage itself.
@@ -104,6 +103,10 @@
   };
 
   programs.starship = {
+    enable = true;
+  };
+
+  programs.rofi = {
     enable = true;
   };
 }
