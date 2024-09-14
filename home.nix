@@ -9,6 +9,7 @@
     ./modules/mako/mako.nix
     ./modules/alacritty/alacritty.nix
     ./modules/rofi/rofi.nix
+    ./modules/eww/eww.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
