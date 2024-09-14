@@ -114,7 +114,7 @@
       font = {
         size = 12;
         normal = {
-	  family = "Monoid";
+	  family = "JetBrainsMono";
 	  style = "Regular";
 	};
       };
