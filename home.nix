@@ -101,31 +101,6 @@
     enable = true;
   };
 
-  programs.alacritty = {
-    enable = true;
-    settings = {
-      window = {
-        decorations = "None";
-        opacity = 1;
-        startup_mode = "Maximized";
-        padding = { x = 10; y = 4; };
-      };
-
-      font = {
-        size = 12;
-        normal = {
-	  family = "JetBrainsMono Nerd Font";
-	  style = "Regular";
-	};
-      };
-
-      selection = {
-        save_to_clipboard = true;
-      };
-
-    };
-  };
-
   programs.starship = {
     enable = true;
   };
