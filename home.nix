@@ -18,6 +18,19 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+    alacritty
+    zellij
+    bat
+    btop
+    nushell
+    starship
+
+    floorp
+    wofi
+
+    python3
+    ocaml
+    gcc
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -53,6 +66,7 @@
   #
   home.sessionVariables = {
     EDITOR = "neovim";
+    TERMINAL = "alacritty";
   };
 
   # Let Home Manager install and manage itself.
@@ -67,4 +81,11 @@
   programs.waybar = {
     enable = true;
   };
+
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    vimAlias = true;
+  };
+
 }
