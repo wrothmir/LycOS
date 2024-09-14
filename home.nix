@@ -8,6 +8,7 @@
     ./modules/zellij/zellij.nix
     ./modules/mako/mako.nix
     ./modules/alacritty/alacritty.nix
+    ./modules/rofi/rofi.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -106,7 +107,4 @@
     enable = true;
   };
 
-  programs.rofi = {
-    enable = true;
-  };
 }
