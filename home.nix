@@ -5,6 +5,7 @@
     ./modules/waybar/waybar.nix
     ./modules/neovim/neovim.nix
     ./modules/hyprland/hyprland.nix
+    ./modules/zellij/zellij.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.

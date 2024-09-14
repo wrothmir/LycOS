@@ -217,7 +217,7 @@ plugins {
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
 //
-default_shell "nu"
+default_shell "zsh"
 
 // Choose the path to override cwd that zellij will use for opening new panes
 //
@@ -365,7 +365,7 @@ theme "gruvbox-dark"
 // The name of the default layout to load on startup
 // Default: "default"
 //
-// default_layout "compact"
+default_layout "default"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
@@ -427,7 +427,7 @@ theme "gruvbox-dark"
 
 // The folder in which Zellij will look for layouts
 //
-// layout_dir "/path/to/my/layout_dir"
+layout_dir "./layouts/"
 
 // The folder in which Zellij will look for themes
 //
