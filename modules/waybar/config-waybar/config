@@ -22,26 +22,26 @@
   },
   "network":{
     "format":"{ifname}",
-    "format-wifi":" {essid}",
-    "format-ethernet":"{ipaddr}/{cidr}",
+    "format-wifi":"  {essid}",
+    "format-ethernet":" {ipaddr}/{cidr}",
     "format-disconnected":"",
     "tooltip-format":" {ifname} via {gwaddr}",
-    "tooltip-format-wifi":" {essid}",
-    "tooltip-format-ethernet":" {ifname}",
+    "tooltip-format-wifi":"  {essid}",
+    "tooltip-format-ethernet":"  {ifname}",
     "tooltip-format-disconnected":"Disconnected",
     "max-length":50
   },
   "backlight":{
-    "format":" {percent}%"
+    "format":"  {percent}%"
   },
   "pulseaudio":{
     "format":"{icon} {volume}%",
     "format-bluetooth":"{icon} {volume}%",
-    "format-muted":"",
+    "format-muted":" ",
     "format-icons":{
       "default":[
-        "",
-        ""
+        " ",
+        " "
       ]
     },
     "scroll-step":1,
@@ -58,11 +58,11 @@
     },
     "format":"{icon} {capacity}%",
     "format-icons":[
-      "",
-      "",
-      "",
-      "",
-      ""
+      " ",
+      " ",
+      " ",
+      " ",
+      " "
     ],
     "max-length":25
   },
@@ -73,7 +73,7 @@
   },
   "cpu":{
     "interval":10,
-    "format":" {}%",
+    "format":"  {}%",
     "max-length":10
   },
   "clock":{

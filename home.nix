@@ -3,6 +3,7 @@
 {
   imports = [
     ./modules/waybar/waybar.nix
+    ./modules/neovim/neovim.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -89,12 +90,6 @@
     enable = true;
     userEmail = "vineetagarwal2402@gmail.com";
     userName = "Vineet Agarwal";
-  };
-
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    vimAlias = true;
   };
 
   programs.zsh = {
