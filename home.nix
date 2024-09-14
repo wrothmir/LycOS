@@ -23,7 +23,7 @@
   # environment.
   home.packages = with pkgs; [
 
-    (nerdfonts.override { fonts = [ "JetBrainsMono" "DroidSansMono" ]; })
+    (nerdfonts.override { fonts = [ "JetBrainsMono" "DroidSansMono" "Monoid"]; })
 
     alacritty
     zellij
@@ -114,7 +114,7 @@
       font = {
         size = 12;
         normal = {
-	  family = "JetBrainsMono Nerd Font";
+	  family = "Monoid Nerd Font";
 	  style = "Regular";
 	};
       };
