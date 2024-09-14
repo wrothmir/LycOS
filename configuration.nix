@@ -87,9 +87,8 @@
     description = "nooodlesoup";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-    #  thunderbird
     ];
-    shell = zsh;
+    shell = pkgs.zsh;
   };
 
   home-manager = {
@@ -101,6 +100,7 @@
 
   # Install firefox.
   programs.firefox.enable = true;
+  programs.zsh.enable = true;
 
   # Enable Hyprland
   programs.hyprland = {
