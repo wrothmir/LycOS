@@ -58,7 +58,7 @@ in
         save_to_clipboard = true;
       };
 
-      # colors = gruvbox_light;
+      colors = gruvbox_light;
     };
   };
 
