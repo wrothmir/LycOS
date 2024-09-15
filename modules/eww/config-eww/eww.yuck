@@ -39,7 +39,7 @@
        :space-evenly true
        :halign "start"
        :spacing 10
-       "${no}: ${window}"
+       "${no} : ${window}"
        ))
 
 (defwidget music []

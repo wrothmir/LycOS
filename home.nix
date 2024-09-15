@@ -41,6 +41,7 @@
     brightnessctl
     eww
     swww
+    alsa-utils
 
     floorp
     discord
