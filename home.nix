@@ -34,11 +34,9 @@
 
     bat
     nushell
-    starship
     wofi
     libnotify
     brightnessctl
-    eww
     swww
     alsa-utils
 
