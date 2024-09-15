@@ -30,7 +30,7 @@
 	    :tooltip {EWW_RAM.used_mem_perc})
     time))
 
-(defpoll weather :interval "10s"
+(defpoll weather :interval "60s"
   "curl wttr.in/?format='%c+%t' | sed 's/\ \ \ / /'")
 
 (defwidget workspaces []
@@ -64,7 +64,7 @@
 	   :tooltip tooltip)))
 
 
-(defpoll volume :interval "1s"
+(defpoll volume :interval "0.25s"
   `amixer | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%' | head -1`)
 
 (defpoll time :interval "5s"
