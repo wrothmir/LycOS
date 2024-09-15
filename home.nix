@@ -40,6 +40,8 @@
     eww
     swww
     alsa-utils
+    hypridle
+    hyprlock
 
     floorp
     discord
