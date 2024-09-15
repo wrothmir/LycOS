@@ -110,4 +110,7 @@
     enable = true;
   };
 
+  programs.hyprlock = {
+    enable = true;
+  };
 }
