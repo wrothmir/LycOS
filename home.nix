@@ -37,6 +37,7 @@
     wofi
     libnotify
     brightnessctl
+    eww
     swww
     alsa-utils
 
