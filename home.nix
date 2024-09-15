@@ -33,7 +33,6 @@
     (nerdfonts.override { fonts = [ "JetBrainsMono" "DroidSansMono" "Monoid"]; })
 
     bat
-    btop
     nushell
     starship
     wofi
@@ -106,6 +105,10 @@
   };
 
   programs.starship = {
+    enable = true;
+  };
+
+  programs.btop = {
     enable = true;
   };
 
