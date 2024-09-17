@@ -37,6 +37,7 @@
     wofi
     libnotify
     brightnessctl
+    playerctl
     eww
     swww
     alsa-utils
