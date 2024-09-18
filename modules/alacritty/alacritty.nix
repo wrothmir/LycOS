@@ -93,7 +93,7 @@ in
 
   home.file = {
     ".config/alacritty/themes/" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/PyrOS/modules/alacritty/themes";
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/LycOS/modules/alacritty/themes";
       recursive = true;
     };
   };

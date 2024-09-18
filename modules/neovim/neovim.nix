@@ -9,7 +9,7 @@
 
   home.file = {
     ".config/nvim/" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/PyrOS/modules/neovim/nvim";
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/LycOS/modules/neovim/nvim";
       recursive = true;
     };
   };
