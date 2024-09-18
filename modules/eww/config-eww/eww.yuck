@@ -4,10 +4,7 @@
     (music)
     (sidestuff)))
 
-(defpoll window :interval "0.5s" :initial "Unknown"
-  `bash ~/.config/eww/scripts/currentwindow`)
-
-(defpoll no :interval "0.1s" :initial "Unknown"
+(defpoll title :interval "0.1s" :initial "Unknown"
   `bash ~/.config/eww/scripts/workspaceno`)
 
 (defpoll connection :interval "1s" :initial "Not connected"
@@ -39,7 +36,7 @@
        :space-evenly true
        :halign "start"
        :spacing 10
-       "${no} : ${window}"
+       "${title}"
        ))
 
 (defwidget music []
