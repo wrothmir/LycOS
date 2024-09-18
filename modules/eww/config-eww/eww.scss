@@ -2,8 +2,8 @@
   all: unset; //Unsets everything so you can style everything from scratch
 }
 
-$background: #FBF1C7;
-$foreground: #282828;
+$background: #282828;
+$foreground: #FBF1C7;
 $gray: #ebddb2;
 
 //Global Styles
@@ -12,7 +12,7 @@ $gray: #ebddb2;
   color: $foreground;
   border-radius: 15px;
   font-family: Cascadia Mono;
-  border: 3px solid $foreground;
+  border: 2px solid $foreground;
   padding: 5px;
 }
 
