@@ -123,4 +123,8 @@
   programs.ripgrep = {
     enable = true;
   };
+
+  programs.jq = {
+    enable = true;
+  };
 }
