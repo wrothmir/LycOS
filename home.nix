@@ -47,6 +47,8 @@
     floorp
     discord
 
+    android-studio
+
     python3
     ocaml
     opam
@@ -115,6 +117,10 @@
   };
 
   programs.hyprlock = {
+    enable = true;
+  };
+
+  programs.ripgrep = {
     enable = true;
   };
 }
