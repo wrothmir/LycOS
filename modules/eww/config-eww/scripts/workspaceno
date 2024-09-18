@@ -1,5 +1,5 @@
 #!/bin/sh
 TOTAL=$(hyprctl workspaces | grep workspace | sort -n -k 3n | wc -l)
-CURRENT=$(hyprctl activewindow | perl -ne 'm/workspace: (.*) \(.*\)/ && print "$1\n"')
+CURRENT=$(hyprctl activewindow | awk -F'"' '$0=$2')
 
-echo "$CURRENT | 10" 
+echo "$CURRENT" 
