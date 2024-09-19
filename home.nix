@@ -43,6 +43,7 @@
     alsa-utils
     hypridle
     hyprlock
+    thunderbird
 
     floorp
     discord
@@ -128,7 +129,4 @@
     enable = true;
   };
 
-  programs.thunderbird = {
-    enable = true;
-  };
 }
