@@ -127,4 +127,8 @@
   programs.jq = {
     enable = true;
   };
+
+  programs.thunderbird = {
+    enable = true;
+  };
 }
