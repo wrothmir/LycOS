@@ -50,6 +50,7 @@
 
     android-studio
 
+    hugo
     python3
     ocaml
     opam
