@@ -20,6 +20,7 @@
 
 ## Todo:
 
+- [ ] Add volume mute symbol and poll to eww bar
 - [ ] Add Flake links for packages
 - [ ] Theme option
 - [ ] Add superfile
