@@ -52,6 +52,7 @@
 
     hugo
     python3
+    go
     ocaml
     opam
     dune_3
