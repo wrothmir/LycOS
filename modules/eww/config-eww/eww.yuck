@@ -67,8 +67,21 @@
 (defpoll time :interval "5s"
  "date '+%a %b %d %H:%M'")
 
-(defwindow bar
+(defwindow bar0
  :monitor 0
+ :windowtype "dock"
+ :geometry (geometry
+   :y "20px"
+   :width "98%"
+   :height "40px"
+   :anchor "top center"
+   )
+ :exclusive true
+ :stacking "fg"
+ (bar))
+
+(defwindow bar1
+ :monitor 1
  :windowtype "dock"
  :geometry (geometry
    :y "20px"
