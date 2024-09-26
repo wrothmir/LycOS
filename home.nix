@@ -58,6 +58,7 @@
     dune_3
     gcc
     cargo
+    nodejs_22
   ];
 
   nixpkgs.config.allowUnfree = true;
