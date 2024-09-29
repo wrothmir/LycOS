@@ -50,6 +50,8 @@
 
     android-studio
 
+    onlyoffice-bin
+
     hugo
     python3
     go
