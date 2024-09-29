@@ -38,6 +38,7 @@
     libnotify
     brightnessctl
     playerctl
+    wl-clipboard
     eww
     swww
     alsa-utils
