@@ -39,6 +39,7 @@
     brightnessctl
     playerctl
     wl-clipboard
+    tre-command
     eww
     swww
     alsa-utils
