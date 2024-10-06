@@ -40,6 +40,7 @@
     playerctl
     wl-clipboard
     tre-command
+    lshw
     eww
     swww
     alsa-utils
