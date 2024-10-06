@@ -46,8 +46,9 @@
     alsa-utils
     hypridle
     hyprlock
-    thunderbird
 
+    thunderbird
+    steam
     floorp
     discord
 
