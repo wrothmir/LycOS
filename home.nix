@@ -54,6 +54,7 @@
 
     onlyoffice-bin
 
+    micro
     # hugo
     # python3
     # go
