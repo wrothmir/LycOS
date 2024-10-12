@@ -6,7 +6,9 @@
     defaultEditor = true;
     vimAlias = true;
     plugins = with pkgs.vimPlugins; [
-      nvim-treesitter.withAllGrammars
+      nvim-treesitter
+      nvim-treesitter-parsers.lua
+      nvim-treesitter-parsers.nix
       lualine-nvim
 
       telescope-nvim
@@ -26,6 +28,7 @@
       nvim-lspconfig
       cmp-nvim-lsp
 
+      gruvbox-nvim
     ];
     extraConfig = ''
       :luafile ~/.config/nvim/lua/init.lua
@@ -35,6 +38,8 @@
 
   home.packages = with pkgs; [
     stylua
+    lua-language-server
+    gopls
   ];
 
   xdg.configFile.nvim = {
