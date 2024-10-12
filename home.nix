@@ -51,6 +51,8 @@
     steam
     floorp
     discord
+    gimp
+    krita
 
     android-studio
 
