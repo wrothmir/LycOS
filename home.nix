@@ -53,6 +53,7 @@
     discord
     gimp
     krita
+    tiled
 
     android-studio
 

@@ -29,6 +29,7 @@
       cmp-nvim-lsp
 
       gruvbox-nvim
+      neovim-ayu
     ];
     extraConfig = ''
       :luafile ~/.config/nvim/lua/init.lua
