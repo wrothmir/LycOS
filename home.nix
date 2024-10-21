@@ -46,6 +46,7 @@
     alsa-utils
     hypridle
     hyprlock
+    wlsunset
 
     thunderbird
     steam
@@ -53,6 +54,7 @@
     discord
     gimp
     krita
+    drawio
     tiled
 
     android-studio
