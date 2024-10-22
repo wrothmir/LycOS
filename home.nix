@@ -4,7 +4,6 @@
   imports = [
     ./modules/waybar/waybar.nix
     ./modules/neovim/neovim.nix
-    ./modules/nh/nh.nix
     ./modules/hyprland/hyprland.nix
     ./modules/zellij/zellij.nix
     ./modules/mako/mako.nix
