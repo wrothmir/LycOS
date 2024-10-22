@@ -118,6 +118,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
     ];
+    password = "";
     shell = pkgs.zsh;
   };
 
