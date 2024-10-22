@@ -41,12 +41,14 @@
     wl-clipboard
     tre-command
     lshw
+    nh
     eww
     swww
     alsa-utils
     hypridle
     hyprlock
     wlsunset
+    wl-gammarelay-rs
 
     thunderbird
     steam
