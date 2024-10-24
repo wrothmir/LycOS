@@ -118,14 +118,13 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
     ];
-    password = "";
     shell = pkgs.zsh;
   };
 
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
     users = {
-      "raikan" = import ./home.nix;
+      "fenrir" = import ./home.nix;
     };
   };
 

@@ -118,8 +118,8 @@
 
   programs.git = {
     enable = true;
-    userEmail = "vineetagarwal2402@gmail.com";
-    userName = "Vineet Agarwal";
+    userEmail = "fenrir.dev@tutamail.com";
+    userName = "fenrir";
   };
 
   programs.zsh = {

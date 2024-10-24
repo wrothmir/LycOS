@@ -1,12 +1,12 @@
-require("raikan.remap")
-require("raikan.set")
+require("fenrir.remap")
+require("fenrir.set")
 
-require("raikan.colorscheme")
-require("raikan.lualine")
+require("fenrir.colorscheme")
+require("fenrir.lualine")
 
-require("raikan.treesitter")
-require("raikan.telescope")
-require("raikan.undotree")
-require("raikan.completion")
-require("raikan.lsp")
+require("fenrir.treesitter")
+require("fenrir.telescope")
+require("fenrir.undotree")
+require("fenrir.completion")
+require("fenrir.lsp")
 
