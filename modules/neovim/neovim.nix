@@ -31,9 +31,9 @@
       gruvbox-nvim
       neovim-ayu
     ];
-    extraConfig = ''
-      :luafile ~/.config/nvim/lua/init.lua
-    '';
+    #extraConfig = ''
+    #  :luafile ~/.config/nvim/lua/init.lua
+    #'';
 
   };
 
@@ -43,9 +43,10 @@
     gopls
   ];
 
-  xdg.configFile.nvim = {
-    source = ./nvim;
-    recursive = true;
+  home.file = {
+    ".config/nvim" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/LycOS/modules/neovim/nvim";
+      recursive = true;
+    };
   };
-
 }

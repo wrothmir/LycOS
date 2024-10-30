@@ -49,6 +49,7 @@
     hyprlock
     wlsunset
     wl-gammarelay-rs
+    networkmanagerapplet
 
     thunderbird
     steam
