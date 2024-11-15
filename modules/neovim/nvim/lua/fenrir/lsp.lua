@@ -2,6 +2,20 @@ local capabilites = require('cmp_nvim_lsp').default_capabilities()
 
 local lspconfig = require("lspconfig")
 
+lspconfig.pylsp.setup({
+  capabilites = capabilites,
+  settings = {
+    pylsp = {
+      plugins = {
+        ruff = {
+          enabled = true,
+          formatEnabled = true,  -- Enable formatting using ruffs formatter
+          targetVersion = "py310",  -- The minimum python version to target (applies for both linting and formatting).
+        },
+      }
+    }
+  }
+})
 lspconfig.gopls.setup({
   capabilites = capabilites,
 })

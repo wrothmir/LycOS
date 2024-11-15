@@ -8,6 +8,9 @@
     plugins = with pkgs.vimPlugins; [
       nvim-treesitter
       nvim-treesitter-parsers.lua
+      nvim-treesitter-parsers.python
+      nvim-treesitter-parsers.go
+      nvim-treesitter-parsers.ocaml
       nvim-treesitter-parsers.nix
       lualine-nvim
 
