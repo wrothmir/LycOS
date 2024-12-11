@@ -23,14 +23,17 @@
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "24.05"; # Please read the comment before changing.
+  home.stateVersion = "24.11"; # Please read the comment before changing.
 
   fonts.fontconfig.enable = true;
+  # fonts.packages = with pkgs; [
+  #   nerd-fonts.JetBrainsMono
+  #   nerd-fonts.DroidSansMono
+  #   nerd-fonts.Monoid
+  # ];
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-
-    (nerdfonts.override { fonts = [ "JetBrainsMono" "DroidSansMono" "Monoid"]; })
 
     bat
     nushell
@@ -50,6 +53,8 @@
     wlsunset
     wl-gammarelay-rs
     networkmanagerapplet
+    libimobiledevice
+    ifuse
 
     thunderbird
     steam

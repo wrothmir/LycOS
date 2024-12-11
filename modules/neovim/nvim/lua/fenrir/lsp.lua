@@ -16,6 +16,7 @@ lspconfig.pylsp.setup({
     }
   }
 })
+
 lspconfig.gopls.setup({
   capabilites = capabilites,
 })
