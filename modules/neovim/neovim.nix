@@ -16,10 +16,12 @@
 
       telescope-nvim
       telescope-file-browser-nvim
+      oil-nvim
 
       undotree
 
       cmp-buffer
+      nvim-cmp
       cmp-path
       cmp-zsh
       cmp-nvim-lua
@@ -32,6 +34,7 @@
       cmp-nvim-lsp
 
       gruvbox-nvim
+      mini-icons
       neovim-ayu
     ];
     #extraConfig = ''

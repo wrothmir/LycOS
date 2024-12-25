@@ -1,9 +1,9 @@
-local capabilites = require('cmp_nvim_lsp').default_capabilities()
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local lspconfig = require("lspconfig")
 
 lspconfig.pylsp.setup({
-  capabilites = capabilites,
+  capabilites = capabilities,
   settings = {
     pylsp = {
       plugins = {
@@ -18,10 +18,11 @@ lspconfig.pylsp.setup({
 })
 
 lspconfig.gopls.setup({
-  capabilites = capabilites,
+  capabilites = capabilities,
 })
+
 lspconfig.lua_ls.setup({
-  capabilites = capabilites,
+  capabilites = capabilities,
   settings = {
     Lua = {
       runtime = {

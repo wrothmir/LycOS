@@ -26,11 +26,6 @@
   home.stateVersion = "24.11"; # Please read the comment before changing.
 
   fonts.fontconfig.enable = true;
-  # fonts.packages = with pkgs; [
-  #   nerd-fonts.JetBrainsMono
-  #   nerd-fonts.DroidSansMono
-  #   nerd-fonts.Monoid
-  # ];
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [

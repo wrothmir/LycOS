@@ -8,5 +8,7 @@ require("fenrir.treesitter")
 require("fenrir.telescope")
 require("fenrir.undotree")
 require("fenrir.completion")
+--require("fenrir.blink")
 require("fenrir.lsp")
-
+require("fenrir.oil")
+require("fenrir.mini")
