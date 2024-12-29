@@ -61,6 +61,8 @@
     pkgs.android-studio
     pkgs.onlyoffice-bin
     pkgs.micro
+    pkgs.reaper
+    pkgs.qbittorrent
     # hugo
     # python3
     # go
