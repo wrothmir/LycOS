@@ -14,9 +14,13 @@
     hyprland = {
       url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     };
+
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
   };
 
-  outputs = { nixpkgs, ... } @ inputs:
+  outputs = { nixpkgs, ghostty, ... } @ inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};

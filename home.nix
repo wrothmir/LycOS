@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, ghostty, ... }:
 
 {
   imports = [
@@ -28,43 +28,39 @@
   fonts.fontconfig.enable = true;
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs; [
+  home.packages = [
 
-    bat
-    nushell
-    wofi
-    libnotify
-    brightnessctl
-    playerctl
-    wl-clipboard
-    tre-command
-    lshw
-    nh
-    eww
-    swww
-    alsa-utils
-    hypridle
-    hyprlock
-    wlsunset
-    wl-gammarelay-rs
-    networkmanagerapplet
-    libimobiledevice
-    ifuse
-
-    thunderbird
-    steam
-    floorp
-    discord
-    gimp
-    krita
-    drawio
-    tiled
-
-    android-studio
-
-    onlyoffice-bin
-
-    micro
+    pkgs.bat
+    pkgs.nushell
+    pkgs.wofi
+    pkgs.libnotify
+    pkgs.brightnessctl
+    pkgs.playerctl
+    pkgs.wl-clipboard
+    pkgs.tre-command
+    pkgs.lshw
+    pkgs.nh
+    pkgs.eww
+    pkgs.swww
+    pkgs.alsa-utils
+    pkgs.hypridle
+    pkgs.hyprlock
+    pkgs.wlsunset
+    pkgs.wl-gammarelay-rs
+    pkgs.networkmanagerapplet
+    pkgs.libimobiledevice
+    pkgs.ifuse
+    pkgs.thunderbird
+    pkgs.steam
+    pkgs.floorp
+    pkgs.discord
+    pkgs.gimp
+    pkgs.krita
+    pkgs.drawio
+    pkgs.tiled
+    pkgs.android-studio
+    pkgs.onlyoffice-bin
+    pkgs.micro
     # hugo
     # python3
     # go

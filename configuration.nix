@@ -157,11 +157,15 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    en-croissant
+    stockfish
+    inputs.ghostty.packages.x86_64-linux.default
   ];
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
     nerd-fonts.droid-sans-mono
+    nerd-fonts.fira-code
     nerd-fonts.monoid
   ];
 

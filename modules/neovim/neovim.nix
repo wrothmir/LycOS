@@ -12,11 +12,13 @@
       nvim-treesitter-parsers.go
       nvim-treesitter-parsers.ocaml
       nvim-treesitter-parsers.nix
+      nvim-treesitter-parsers.rust
       lualine-nvim
 
       telescope-nvim
       telescope-file-browser-nvim
       oil-nvim
+      zen-mode-nvim
 
       undotree
 
