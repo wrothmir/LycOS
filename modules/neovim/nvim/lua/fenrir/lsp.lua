@@ -4,7 +4,7 @@ local lspconfig = require("lspconfig")
 
 local on_attach = function()
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = 0 })
-  vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, { buffer = 0 })
+  vim.keymap.set("n", "gtd", vim.lsp.buf.type_definition, { buffer = 0 })
   vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { buffer = 0 })
   vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })
   vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next, { buffer = 0 })
@@ -35,6 +35,11 @@ lspconfig.pylsp.setup({
 })
 
 lspconfig.gopls.setup({
+  capabilites = capabilities,
+  on_attach = on_attach
+})
+
+lspconfig.ols.setup({
   capabilites = capabilities,
   on_attach = on_attach
 })
@@ -70,6 +75,8 @@ lspconfig.lua_ls.setup({
   },
   on_attach = on_attach
 })
+
+--vim.lsp.set_log_level("debug")
 
 for _, method in ipairs({ 'textDocument/diagnostic', 'workspace/diagnostic' }) do
     local default_diagnostic_handler = vim.lsp.handlers[method]

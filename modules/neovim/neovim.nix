@@ -5,39 +5,41 @@
     enable = true;
     defaultEditor = true;
     vimAlias = true;
-    plugins = with pkgs.vimPlugins; [
-      nvim-treesitter
-      nvim-treesitter-parsers.lua
-      nvim-treesitter-parsers.python
-      nvim-treesitter-parsers.go
-      nvim-treesitter-parsers.ocaml
-      nvim-treesitter-parsers.nix
-      nvim-treesitter-parsers.rust
-      lualine-nvim
+    plugins = with pkgs; [
+      vimPlugins.nvim-treesitter
+      vimPlugins.nvim-treesitter-parsers.lua
+      vimPlugins.nvim-treesitter-parsers.python
+      vimPlugins.nvim-treesitter-parsers.go
+      vimPlugins.nvim-treesitter-parsers.ocaml
+      vimPlugins.nvim-treesitter-parsers.nix
+      vimPlugins.nvim-treesitter-parsers.rust
+      vimPlugins.nvim-treesitter-parsers.odin
+      vimPlugins.lualine-nvim
 
-      telescope-nvim
-      telescope-file-browser-nvim
-      oil-nvim
-      zen-mode-nvim
+      vimPlugins.telescope-nvim
+      vimPlugins.telescope-file-browser-nvim
+      vimPlugins.oil-nvim
+      vimPlugins.zen-mode-nvim
 
-      undotree
+      vimPlugins.undotree
 
-      cmp-buffer
-      nvim-cmp
-      cmp-path
-      cmp-zsh
-      cmp-nvim-lua
+      vimPlugins.cmp-buffer
+      vimPlugins.nvim-cmp
+      vimPlugins.cmp-path
+      vimPlugins.cmp-zsh
+      vimPlugins.cmp-nvim-lua
 
-      luasnip
-      friendly-snippets
-      cmp_luasnip
+      vimPlugins.luasnip
+      vimPlugins.friendly-snippets
+      vimPlugins.cmp_luasnip
 
-      nvim-lspconfig
-      cmp-nvim-lsp
+      vimPlugins.nvim-lspconfig
+      vimPlugins.cmp-nvim-lsp
 
-      gruvbox-nvim
-      mini-icons
-      neovim-ayu
+      vimPlugins.gruvbox-nvim
+      vimPlugins.mini-icons
+      vimPlugins.neovim-ayu
+
     ];
     #extraConfig = ''
     #  :luafile ~/.config/nvim/lua/init.lua
@@ -49,6 +51,9 @@
     stylua
     lua-language-server
     gopls
+    nil
+    ruff
+    ols
   ];
 
   home.file = {
