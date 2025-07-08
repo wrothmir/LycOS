@@ -1,15 +1,16 @@
-require("fenrir.remap")
-require("fenrir.set")
+require 'fenrir.remap'
+require 'fenrir.opts'
+require 'fenrir.colors'
 
-require("fenrir.colorscheme")
-require("fenrir.lualine")
+require 'config.mini'
+require 'config.oil'
+require 'config.lualine'
+require 'config.treesitter'
+require 'config.telescope'
+require 'config.undotree'
+require 'config.blink'
+require 'config.lsp'
+require 'config.zenmode'
 
-require("fenrir.treesitter")
-require("fenrir.telescope")
-require("fenrir.undotree")
-require("fenrir.completion")
---require("fenrir.blink")
-require("fenrir.lsp")
-require("fenrir.mini")
-require("fenrir.oil")
-require("fenrir.zenmode")
+require 'custom.baker'.setup({ term_cmd = "zsh", })
+require 'custom.multigrep'.setup()

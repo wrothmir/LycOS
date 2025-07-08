@@ -8,7 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./modules/nh/nh.nix
       inputs.home-manager.nixosModules.default
     ];
 
@@ -48,13 +47,13 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
-    variant = "dvorak";
+    variant = "";
   };
 
   # NVIDIA
@@ -62,6 +61,7 @@
     enable = true;
     enable32Bit = true;
   };
+  hardware.bluetooth.enable = true;
   services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia = {
 
@@ -91,8 +91,12 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  services.udev.packages = [
+    pkgs.qmk-udev-rules
+  ];
+
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   # services.tlp.enable = true;
   services.pipewire = {
@@ -116,9 +120,9 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.fenrir = {
+  users.users.wrothmir = {
     isNormalUser = true;
-    description = "fenrir";
+    description = "wrothmir";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
     ];
@@ -129,7 +133,7 @@
     extraSpecialArgs = {inherit inputs;};
     backupFileExtension = "backup";
     users = {
-      "fenrir" = import ./home.nix;
+      "wrothmir" = import ./home.nix;
     };
   };
 
@@ -140,7 +144,7 @@
 
   # Enable Hyprland
   programs.hyprland = {
-    enable = true;
+    enable = false;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
@@ -149,25 +153,166 @@
   nixpkgs.config.allowUnfree = true;
   nix.settings = {
     experimental-features = [ "nix-command" "flakes"];
-    substituters = ["https://hyprland.cachix.org"];
-    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
 
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    en-croissant
-    stockfish
-    inputs.ghostty.packages.x86_64-linux.default
   ];
+
+  programs.nix-ld.dev.enable = true;
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+    package = pkgs.appimage-run.override {
+      extraPkgs = pkgs: [
+        pkgs.fuse
+        pkgs.desktop-file-utils
+        pkgs.xorg.libXcomposite
+        pkgs.xorg.libXtst
+        pkgs.xorg.libXrandr
+        pkgs.xorg.libXext
+        pkgs.xorg.libX11
+        pkgs.xorg.libXau
+        pkgs.xorg.libXfixes
+        pkgs.libGL
+        pkgs.gst_all_1.gstreamer
+        pkgs.gst_all_1.gst-plugins-ugly
+        pkgs.gst_all_1.gst-plugins-base
+        pkgs.libdrm
+        pkgs.xorg.xkeyboardconfig
+        pkgs.xorg.libpciaccess
+        pkgs.glib
+        pkgs.gtk2
+        pkgs.bzip2
+        pkgs.zlib
+        pkgs.gdk-pixbuf
+        pkgs.xorg.libXinerama
+        pkgs.xorg.libXdamage
+        pkgs.xorg.libXcursor
+        pkgs.xorg.libXrender
+        pkgs.xorg.libXScrnSaver
+        pkgs.xorg.libXxf86vm
+        pkgs.xorg.libXi
+        pkgs.xorg.libSM
+        pkgs.xorg.libICE
+        pkgs.freetype
+        pkgs.curlWithGnuTls
+        pkgs.nspr
+        pkgs.nss
+        pkgs.fontconfig
+        pkgs.cairo
+        pkgs.pango
+        pkgs.expat
+        pkgs.dbus
+        pkgs.cups
+        pkgs.libcap
+        pkgs.SDL2
+        pkgs.libusb1
+        pkgs.udev
+        pkgs.dbus-glib
+        pkgs.atk
+        pkgs.at-spi2-atk
+        pkgs.libudev0-shim
+        pkgs.xorg.libXt
+        pkgs.xorg.libXmu
+        pkgs.xorg.libxcb
+        pkgs.xorg.xcbutil
+        pkgs.xorg.xcbutilwm
+        pkgs.xorg.xcbutilimage
+        pkgs.xorg.xcbutilkeysyms
+        pkgs.xorg.xcbutilrenderutil
+        pkgs.libGLU
+        pkgs.libuuid
+        pkgs.libogg
+        pkgs.libvorbis
+        pkgs.SDL
+        pkgs.SDL2_image
+        pkgs.glew110
+        pkgs.openssl
+        pkgs.libidn
+        pkgs.tbb
+        pkgs.wayland
+        pkgs.mesa
+        pkgs.libxkbcommon
+        pkgs.vulkan-loader
+        pkgs.flac
+        pkgs.freeglut
+        pkgs.libjpeg
+        pkgs.libpng12
+        pkgs.libpulseaudio
+        pkgs.libsamplerate
+        pkgs.libmikmod
+        pkgs.libtheora
+        pkgs.libtiff
+        pkgs.pixman
+        pkgs.speex
+        #pkgs.SDL_image
+        #pkgs.SDL_ttf
+        #pkgs.SDL_mixer
+        #pkgs.SDL2_ttf
+        #pkgs.SDL2_mixer
+        pkgs.libappindicator-gtk2
+        pkgs.libcaca
+        pkgs.libcanberra
+        pkgs.libgcrypt
+        pkgs.libvpx
+        pkgs.librsvg
+        pkgs.xorg.libXft
+        pkgs.libvdpau
+        pkgs.alsa-lib
+        pkgs.harfbuzz
+        pkgs.e2fsprogs
+        pkgs.libgpg-error
+        pkgs.keyutils.lib
+        pkgs.libjack2
+        pkgs.fribidi
+        pkgs.p11-kit
+        pkgs.gmp
+        pkgs.libtool.lib
+        pkgs.xorg.libxshmfence
+        pkgs.xorg.libxkbfile
+        pkgs.at-spi2-core
+        pkgs.gtk3
+        pkgs.stdenv.cc.cc.lib
+      ];
+    };
+  };
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
     nerd-fonts.droid-sans-mono
     nerd-fonts.fira-code
     nerd-fonts.monoid
+    ipafont
+    kochi-substitute
   ];
+
+  fonts.fontconfig.defaultFonts = {
+    monospace = [
+      "JetBrains Mono"
+      "IPAGothic"
+    ];
+    sansSerif = [
+      "JetBrains Mono"
+      "IPAPGothic"
+    ];
+    serif = [
+      "JetBrains Mono"
+      "IPAPMincho"
+    ];
+  };
+
+  i18n.inputMethod = {
+     type = "fcitx5";
+     enable = true;
+     fcitx5.addons = with pkgs; [
+       fcitx5-mozc
+       fcitx5-gtk
+       kdePackages.fcitx5-with-addons
+     ];
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

@@ -7,10 +7,10 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
-vim.keymap.set("n", "<leader>t", ":tabnew<CR>")
-vim.keymap.set("n", "Tc", ":tabn<CR>")
-vim.keymap.set("n", "Tn", ":+tabnext<CR>")
-vim.keymap.set("n", "Tp", ":-tabnext<CR>")
+vim.keymap.set("n", "<leader>tab", ":tabnew<CR>")
+
+vim.keymap.set("n", "<leader>vs", ":vs<CR>")
+
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
 -- next greatest remap ever : asbjornHaland

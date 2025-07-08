@@ -2,19 +2,23 @@
 
 {
   imports = [
-    ./modules/waybar/waybar.nix
-    ./modules/neovim/neovim.nix
-    ./modules/hyprland/hyprland.nix
-    ./modules/zellij/zellij.nix
-    ./modules/mako/mako.nix
+    #./modules/waybar/waybar.nix
+    #./modules/hyprland/hyprland.nix
+    #./modules/zellij/zellij.nix
+    #./modules/mako/mako.nix
     ./modules/alacritty/alacritty.nix
+    ./modules/neovim/neovim.nix
     ./modules/rofi/rofi.nix
+    ./modules/nh/nh.nix
+    ./modules/git/git.nix
     ./modules/eww/eww.nix
+    ./modules/tmux/tmux.nix
+    ./modules/fmodstudio/fmodstudio.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "fenrir";
-  home.homeDirectory = "/home/fenrir";
+  home.username = "wrothmir";
+  home.homeDirectory = "/home/wrothmir";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -23,15 +27,17 @@
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "24.11"; # Please read the comment before changing.
+  home.stateVersion = "25.11"; # Please read the comment before changing.
 
   fonts.fontconfig.enable = true;
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
 
+    pkgs.git
+    pkgs.diff-so-fancy
+    pkgs.tmux
     pkgs.bat
-    pkgs.nushell
     pkgs.wofi
     pkgs.libnotify
     pkgs.brightnessctl
@@ -40,38 +46,53 @@
     pkgs.tre-command
     pkgs.lshw
     pkgs.nh
-    pkgs.eww
-    pkgs.swww
     pkgs.alsa-utils
-    pkgs.hypridle
-    pkgs.hyprlock
     pkgs.wlsunset
     pkgs.wl-gammarelay-rs
     pkgs.networkmanagerapplet
     pkgs.libimobiledevice
     pkgs.ifuse
+    pkgs.exfat
+    pkgs.ntfs3g
+
     pkgs.thunderbird
+    pkgs.librewolf
     pkgs.steam
-    pkgs.floorp
     pkgs.discord
+
+    pkgs.steam-run
+
+    pkgs.android-studio
+    pkgs.chromium
+
+    pkgs.distrobox
+    pkgs.lilipod
+
+    #pkgs.onlyoffice-bin
+    pkgs.libreoffice-qt6-fresh
+    pkgs.qbittorrent
+
     pkgs.gimp
     pkgs.krita
     pkgs.drawio
-    pkgs.tiled
-    pkgs.android-studio
-    pkgs.onlyoffice-bin
-    pkgs.micro
     pkgs.reaper
-    pkgs.qbittorrent
-    # hugo
-    # python3
-    # go
-    # ocaml
-    # opam
-    # dune_3
-    # gcc
-    # cargo
-    # nodejs_22
+    #pkgs.davinci-resolve
+    pkgs.fmodex
+    pkgs.aseprite
+    pkgs.ldtk
+    pkgs.tiled
+
+    pkgs.qmk
+    pkgs.vlc
+
+    pkgs.tmuxinator
+    pkgs.ghostty
+    pkgs.anki-bin
+    pkgs.mplayer
+
+    pkgs.testdisk-qt
+    #pkgs.hypridle
+    #pkgs.hyprlock
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -109,32 +130,56 @@
   #
   home.sessionVariables = {
     # EDITOR = "neovim";
-    TERM = "alacritty";
+    TERM = "ghostty";
+    SAL_USE_VCLPLUGIN = "kf5";
+  };
+
+  home.shellAliases = {
+    tx = "tmuxinator";
+    txs = "tmuxinator start";
+    rbs = "sudo nixos-rebuild switch --flake ~/LycOS";
   };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  programs.git = {
+  programs.gitui = {
     enable = true;
-    userEmail = "fenrir.dev@tutamail.com";
-    userName = "fenrir";
   };
 
+  programs.fzf = {
+    tmux = {
+      enableShellIntegration = true;
+    };
+  };
+  
   programs.zsh = {
     enable = true;
   };
 
   programs.starship = {
     enable = true;
+    settings = {
+      scan_timeout = 10;
+      command_timeout = 200;
+    };
+    enableBashIntegration = true;
+    enableZshIntegration = true;
   };
 
   programs.btop = {
     enable = true;
   };
 
-  programs.hyprlock = {
+  programs.eza = {
     enable = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
+    icons = "always";
+  };
+
+  programs.hyprlock = {
+    enable = false;
   };
 
   programs.ripgrep = {

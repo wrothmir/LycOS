@@ -14,31 +14,36 @@
       vimPlugins.nvim-treesitter-parsers.nix
       vimPlugins.nvim-treesitter-parsers.rust
       vimPlugins.nvim-treesitter-parsers.odin
+
+      vimPlugins.nvim-treesitter-parsers.svelte
+      vimPlugins.nvim-treesitter-parsers.html
+      vimPlugins.nvim-treesitter-parsers.css
+      vimPlugins.nvim-treesitter-parsers.typescript
+      vimPlugins.nvim-treesitter-parsers.javascript
       vimPlugins.lualine-nvim
 
       vimPlugins.telescope-nvim
+      vimPlugins.telescope-fzf-native-nvim
       vimPlugins.telescope-file-browser-nvim
       vimPlugins.oil-nvim
       vimPlugins.zen-mode-nvim
+      vimPlugins.neodev-nvim
 
+      vimPlugins.tailwind-tools-nvim
       vimPlugins.undotree
 
-      vimPlugins.cmp-buffer
-      vimPlugins.nvim-cmp
-      vimPlugins.cmp-path
-      vimPlugins.cmp-zsh
-      vimPlugins.cmp-nvim-lua
-
-      vimPlugins.luasnip
-      vimPlugins.friendly-snippets
-      vimPlugins.cmp_luasnip
+      vimPlugins.blink-cmp
 
       vimPlugins.nvim-lspconfig
-      vimPlugins.cmp-nvim-lsp
+      vimPlugins.friendly-snippets
+      vimPlugins.luasnip
+
+      vimPlugins.mini-icons
+      vimPlugins.mini-indentscope
 
       vimPlugins.gruvbox-nvim
-      vimPlugins.mini-icons
       vimPlugins.neovim-ayu
+      vimPlugins.kanagawa-nvim
 
     ];
     #extraConfig = ''
@@ -50,6 +55,8 @@
   home.packages = with pkgs; [
     stylua
     lua-language-server
+    svelte-language-server
+    tailwindcss-language-server
     gopls
     nil
     ruff

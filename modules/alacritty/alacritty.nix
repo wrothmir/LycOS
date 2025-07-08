@@ -120,7 +120,7 @@ in
         save_to_clipboard = true;
       };
 
-      colors = ayu_dark;
+      colors = gruvbox_dark;
     };
   };
 
