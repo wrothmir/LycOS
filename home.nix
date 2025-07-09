@@ -2,17 +2,17 @@
 
 {
   imports = [
-    #./modules/waybar/waybar.nix
+    #./modules/waybar.nix
     #./modules/hyprland/hyprland.nix
-    #./modules/zellij/zellij.nix
-    #./modules/mako/mako.nix
+    #./modules/zellij.nix
+    #./modules/mako.nix
     ./modules/alacritty/alacritty.nix
-    ./modules/neovim/neovim.nix
-    ./modules/rofi/rofi.nix
-    ./modules/nh/nh.nix
-    ./modules/git/git.nix
-    ./modules/eww/eww.nix
-    ./modules/tmux/tmux.nix
+    ./modules/neovim.nix
+    ./modules/rofi.nix
+    ./modules/nh.nix
+    ./modules/git.nix
+    ./modules/eww.nix
+    ./modules/tmux.nix
     ./modules/fmodstudio/fmodstudio.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
