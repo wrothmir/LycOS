@@ -35,6 +35,7 @@
   home.packages = [
 
     pkgs.git
+    pkgs.git-lfs
     pkgs.diff-so-fancy
     pkgs.tmux
     pkgs.bat
