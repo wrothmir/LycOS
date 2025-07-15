@@ -79,6 +79,7 @@
     pkgs.reaper
     #pkgs.davinci-resolve
     pkgs.fmodex
+    pkgs.penpot-desktop
     pkgs.aseprite
     pkgs.ldtk
     pkgs.tiled
