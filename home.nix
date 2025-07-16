@@ -64,7 +64,8 @@
     pkgs.steam-run
 
     pkgs.android-studio
-    pkgs.chromium
+    pkgs.brave
+    pkgs.blender
 
     pkgs.distrobox
     pkgs.lilipod
