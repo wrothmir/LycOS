@@ -34,20 +34,19 @@
 
   };
 
-  outputs = { nixpkgs, nixpkgs-stable, nix-ld, ... } @ inputs:
+  outputs = { nixpkgs, nixpkgs-stable, ... } @ inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      pkgs-stable = nixpkgs-stable.legacyPackages.${system};
     in
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
-          nix-ld.nixosModules.nix-ld
+          inputs.nix-ld.nixosModules.nix-ld
           inputs.musnix.nixosModules.musnix
-          ./configuration.nix
           inputs.home-manager.nixosModules.default
+          ./configuration.nix
         ];
       };
     };

@@ -1,11 +1,11 @@
-{ config, pkgs, pkgs-stable, lib, ... }:
+{ config, pkgs, pkgsStable, lib, ... }:
 
 {
   home.packages = [
     # Sound shite
     pkgs.reaper
     pkgs.lmms
-    pkgs-stable.carla
+    pkgsStable.carla
     pkgs.vital
     pkgs.lsp-plugins
 

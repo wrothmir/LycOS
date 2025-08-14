@@ -459,6 +459,22 @@
         "url": "https://channels.nixos.org/nixos-25.05/nixexprs.tar.xz"
       }
     },
+    "nixpkgs-stable": {
+      "locked": {
+        "lastModified": 1755188845,
+        "narHash": "sha256-btIoJFC74DnDrQDwu1R0PwdZmY6sOmnTzd52gDUbFBY=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "2dadd74ba0519bedbce64814f54b026d91b3bcc1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "release-25.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1751011381,
@@ -537,7 +553,8 @@
         "hyprland": "hyprland",
         "musnix": "musnix",
         "nix-ld": "nix-ld",
-        "nixpkgs": "nixpkgs_4"
+        "nixpkgs": "nixpkgs_4",
+        "nixpkgs-stable": "nixpkgs-stable"
       }
     },
     "systems": {

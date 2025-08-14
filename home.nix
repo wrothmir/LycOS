@@ -1,6 +1,11 @@
-{ config, pkgs, pkgs-stable, ghostty, ... }:
+{ config, pkgs, pkgsStable, ghostty, ... }:
 
 {
+  _module.args.pkgsStable = import inputs.pkgs-stable {
+    inherit (pkgs.stdenv.hostPlatform) system;
+    inherit (config.nixpkgs) config;
+  };
+
   imports = [
     #./modules/waybar.nix
     #./modules/hyprland/hyprland.nix
