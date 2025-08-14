@@ -123,12 +123,13 @@
   users.users.wrothmir = {
     isNormalUser = true;
     description = "wrothmir";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "audio"];
     packages = with pkgs; [
     ];
     shell = pkgs.zsh;
   };
 
+  musnix.enable = true;
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
     backupFileExtension = "backup";

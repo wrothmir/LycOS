@@ -5,7 +5,9 @@
     # Sound shite
     pkgs.reaper
     pkgs.lmms
+    pkgs.carla
     pkgs.vital
+    pkgs.lsp-plugins
 
   ];
 

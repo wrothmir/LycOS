@@ -23,6 +23,11 @@
     ghostty = {
       url = "github:ghostty-org/ghostty";
     };
+
+    musnix = {
+      url = "github:musnix/musnix";
+    };
+
   };
 
   outputs = { nixpkgs, nix-ld, ... } @ inputs:
