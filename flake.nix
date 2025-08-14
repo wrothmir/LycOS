@@ -5,8 +5,9 @@
     nixpkgs = {
       url = "github:nixos/nixpkgs/nixos-unstable";
     };
+
     nixpkgs-stable = {
-      url = "github:nixos/nixpkgs";
+      url = "github:nixos/nixpkgs/release-25.05";
     };
 
     home-manager = {
@@ -33,7 +34,7 @@
 
   };
 
-  outputs = { nixpkgs, nix-ld, ... } @ inputs:
+  outputs = { nixpkgs, nixpkgs-stable, nix-ld, ... } @ inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
