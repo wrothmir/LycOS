@@ -4,8 +4,6 @@
   home.packages = [
     # Sound shite
     pkgs.reaper
-    pkgs.lmms
-    pkgsStable.carla
     pkgs.vital
     pkgs.lsp-plugins
 
@@ -28,5 +26,12 @@
     LXVST_PATH = makePluginPath "lxvst";
     VST_PATH = makePluginPath "vst";
     VST3_PATH = makePluginPath "vst3";
+  };
+
+  home.file = {
+    ".config/REAPER/ColorThemes/" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/LycOS/modules/sound/themes";
+      recursive = true;
+    };
   };
 }

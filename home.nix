@@ -1,7 +1,7 @@
-{ config, pkgs, pkgsStable, ghostty, ... }:
+{ inputs, config, pkgs, pkgsStable, ghostty, ... }:
 
 {
-  _module.args.pkgsStable = import inputs.pkgs-stable {
+  _module.args.pkgsStable = import inputs.nixpkgs-stable {
     inherit (pkgs.stdenv.hostPlatform) system;
     inherit (config.nixpkgs) config;
   };
