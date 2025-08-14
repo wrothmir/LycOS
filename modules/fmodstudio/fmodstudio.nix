@@ -2,8 +2,8 @@
 
 let
   appName = "FModStudio"; # Change to match your app
-  appImagePath = application/fmodstudio.AppImage; # Path relative to flake.nix
-  iconPath = application/fmodstudio.svg; # Path to your SVG icon
+  appImagePath = ./application/fmodstudio.AppImage; # Path relative to flake.nix
+  iconPath = ./application/fmodstudio.svg; # Path to your SVG icon
 
   fmodstudio = pkgs.makeDesktopItem {
     name = appName;

@@ -93,6 +93,10 @@
     pkgs.anki-bin
     pkgs.mplayer
 
+    # Sound shite
+    pkgs.lmms
+    pkgs.vital
+
     pkgs.testdisk-qt
     #pkgs.hypridle
     #pkgs.hyprlock
@@ -141,6 +145,7 @@
     tx = "tmuxinator";
     txs = "tmuxinator start";
     rbs = "sudo nixos-rebuild switch --flake ~/LycOS";
+    nd = "nix develop";
   };
 
   # Let Home Manager install and manage itself.
