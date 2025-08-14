@@ -1,4 +1,4 @@
-{ config, pkgs, ghostty, ... }:
+{ config, pkgs, pkgs-stable, ghostty, ... }:
 
 {
   imports = [
