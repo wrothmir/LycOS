@@ -1,0 +1,17 @@
+[Main toolbar]
+icon_1=toolbar_C_mainAddTrack.png
+icon_2=toolbar_C_mainTrackManager.png
+icon_9=toolbar_C_mainTracksMute.png
+icon_10=toolbar_C_mainMasterShow.png
+item_0=-1
+item_1=40001 Track: Insert new track
+item_2=40906 View: Show track manager window
+item_3=-1
+item_4=-1
+item_5=-1
+item_6=-1
+item_7=-1
+item_8=-1
+item_9=40280 Track: Mute/unmute tracks
+item_10=40075 View: Toggle master track visible
+

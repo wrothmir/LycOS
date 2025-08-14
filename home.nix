@@ -13,6 +13,7 @@
     ./modules/git.nix
     ./modules/eww.nix
     ./modules/tmux.nix
+    ./modules/sound/sound.nix
     ./modules/fmodstudio/fmodstudio.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
@@ -77,7 +78,6 @@
     pkgs.gimp
     pkgs.krita
     pkgs.drawio
-    pkgs.reaper
     #pkgs.davinci-resolve
     pkgs.fmodex
     pkgs.penpot-desktop
@@ -92,10 +92,6 @@
     pkgs.ghostty
     pkgs.anki-bin
     pkgs.mplayer
-
-    # Sound shite
-    pkgs.lmms
-    pkgs.vital
 
     pkgs.testdisk-qt
     #pkgs.hypridle
