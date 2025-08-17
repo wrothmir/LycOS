@@ -61,6 +61,7 @@
     pkgs.ifuse
     pkgs.exfat
     pkgs.ntfs3g
+    pkgs.toybox
 
     pkgs.thunderbird
     pkgs.librewolf
