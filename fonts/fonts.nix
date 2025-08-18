@@ -16,15 +16,15 @@ let
     "Share-Regular.ttf"
     "Roboto-Bold.ttf"
     "Roboto-Regular.ttf"
-    "Roboto-Condensed-Regular.ttf"
-    "Roboto-Condensed-Bold.ttf"
+    "RobotoCondensed-Regular.ttf"
+    "RobotoCondensed-Bold.ttf"
   ];
 
   makeFont = fileName: pkgs.runCommand (lib.strings.toLower (lib.strings.replaceStrings [".ttf"] [""] fileName)) {
     inherit fileName;
   } ''
     mkdir -p $out/share/fonts/truetype
-    cp ${fontDir}/${fileName} $out/share/fonts/truetype/
+    cp ${fontDir}/"${fileName}" $out/share/fonts/truetype/
   '';  
   localFonts = map makeFont fontNames;
   nixFonts = [
