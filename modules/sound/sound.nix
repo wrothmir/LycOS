@@ -9,23 +9,68 @@ let
     ])
     + ":$HOME/.${format}";
   
-  pluginLinkFarm = name: type: packages:
-    pkgs.linkFarm name
-      (builtins.concatLists (map (pkg:
-        let
-          basePath =
-            if type == "lv2" then "${pkg}/lib/lv2"
-            else if type == "vst3" then "${pkg}/lib/vst3"
-            else throw "Unsupported plugin type: ${type}";
-        in
-          if builtins.pathExists basePath then
-            map (bundle: {
-              name = baseNameOf bundle;
-              path = bundle;
-            }) (builtins.attrValues (builtins.readDir basePath))
-          else
-            []
-      ) packages));
+  pluginLinks = pkgs: type:
+    lib.concatMap (pkg:
+      let
+        dir =
+          if type == "vst3" then "${pkg}/lib/vst3"
+          else if type == "vst" then "${pkg}/lib/vst"
+          else if type == "lv2" then "${pkg}/lib/lv2"
+          else throw "Unsupported plugin type: ${type}";
+        contents = builtins.attrNames (builtins.readDir dir);
+      in map (name: {
+        name = name;
+        path = "${dir}/${name}";
+      }) contents
+    ) pkgs;
+
+  sitala = pkgs.stdenv.mkDerivation rec {
+    pname = "sitala";
+    version = "1.0";
+
+    src = pkgs.fetchurl {
+      url = "https://decomposer.de/sitala/releases/sitala-1.0_amd64.deb";
+      sha256 = "0cz33jsssh6g9gqzvawvfi80fjcd13qf8yhl7f3nqx0rdwk4hl6v"; 
+    };
+
+    nativeBuildInputs = [
+      pkgs.dpkg
+      pkgs.autoPatchelfHook
+    ];
+
+    buildInputs = [
+      pkgs.glibc
+      pkgs.freetype
+      pkgs.curlWithGnuTls
+      pkgs.stdenv.cc.cc.lib
+      pkgs.xorg.libX11
+      pkgs.xorg.libXext
+      pkgs.alsa-lib
+    ];
+
+    unpackPhase = ''
+      dpkg-deb -x "$src" .
+    '';
+
+    installPhase = ''
+      mkdir -p $out/bin
+      mkdir -p $out/lib/vst
+      mkdir -p $out/share/applications
+      mkdir -p $out/share/icons
+
+      cp usr/bin/sitala $out/bin/sitala
+      cp -r usr/lib/lxvst/* $out/lib/vst/
+      cp -r usr/share/applications/* $out/share/applications/
+      cp -r usr/share/icons/* $out/share/icons/
+    '';
+
+    meta = with lib; {
+      description = "Sitala drum sampler VST/AU plugin";
+      homepage = "https://decomposer.de/sitala/";
+      license = licenses.unfreeRedistributable;
+      platforms = [ "x86_64-linux" ];
+    };
+  };
 
   qjackctl-pwjack = pkgs.writeShellScriptBin "qjackctl" ''
     exec pw-jack ${pkgs.qjackctl}/bin/qjackctl "$@"
@@ -41,6 +86,11 @@ let
     pkgs.cardinal
     pkgs.odin2
     pkgs.surge-XT
+  ];
+
+  # VST compatible plugins
+  vstPlugins = [
+    sitala
   ];
 
   # LV2 compatible plugins
@@ -64,15 +114,18 @@ in
   };
 
   home.packages = [
+    pkgs.alsa-lib
     pkgs.pipewire.jack
     pkgs.a2jmidid
+    pkgs.decent-sampler
     qjackctl-pwjack
   ] ++ daw ++ vst3Plugins ++ lv2Plugins;
 
   home.file = {
 
-    ".vst3".source = pluginLinkFarm "vst3-plugins" "vst3" vst3Plugins;
-    ".lv2".source  = pluginLinkFarm "lv2-plugins" "lv2" lv2Plugins;
+    ".vst3".source = pkgs.linkFarm "vst3-plugins" (pluginLinks vst3Plugins "vst3");
+    ".vst".source  = pkgs.linkFarm "vst-plugins" (pluginLinks vstPlugins "vst");
+    ".lv2".source  = pkgs.linkFarm "lv2-plugins" (pluginLinks lv2Plugins "lv2");
 
     ".config/REAPER/ColorThemes/" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/LycOS/modules/sound/themes";
@@ -83,15 +136,15 @@ in
   systemd.user.services.a2jmidid = {
     Unit = {
       Description = "ALSA to JACK MIDI bridge";
-      After = [ "pipewire.service" ];
+      After = [ "pipewire.service" "pipewire-pulse.service" ];
       Wants = [ "pipewire.service" ];
     };
     Service = {
-      ExecStart = "${pkgs.coreutils}/bin/sh -c ''\
-        export LD_LIBRARY_PATH=\"$(nix eval --raw nixpkgs#pipewire.jack)/lib\"; \
-        a2jmidid -e''";
-      Restart = "on-failure";
+      ExecStart = "${pkgs.a2jmidid}/bin/a2jmidid -e";
+      Restart = "always";
     };
-    Install.WantedBy = [ "default.target" ];
+    Install = {
+      WantedBy = [ "default.target" ];
+    };
   };
 }
