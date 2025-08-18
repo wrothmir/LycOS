@@ -3,27 +3,25 @@
 
 let
   fontDir = ./ttfs;  # relative path to folder containing TTFs
+  lib = pkgs.lib;
 
   # list of fonts: use the exact filename of the TTF
   fontNames = [
-    "Cuprum"
-    "OpenSans-CondLight"
-    "OpenSans-Italic"
-    "PT_Sans-Narrow-Web-Regular"
-    "SegoeUI"
-    "SegUISB"
-    "Share-Regular"
+    "Cuprum.ttf"
+    "OpenSans-CondLight.ttf"
+    "OpenSans-Italic.ttf"
+    "PT_Sans-Narrow-Web-Regular.ttf"
+    "SegoeUI.ttf"
+    "SegUISB.ttf"
+    "Share-Regular.ttf"
   ];
 
-  makeFont = fileName: pkgs.stdenv.mkDerivation {
-    pname = builtins.toLower fileName;
-    version = "1.0";
-    src = "${fontDir}/${fileName}.ttf";
-    installPhase = ''
-      mkdir -p $out/share/fonts/truetype
-      cp "$src" $out/share/fonts/truetype/
-    '';
-  };
+  makeFont = fileName: pkgs.runCommand (lib.strings.toLower (lib.strings.replaceStrings [".ttf"] [""] fileName)) {
+    inherit fileName;
+  } ''
+    mkdir -p $out/share/fonts/truetype
+    cp ${fontDir}/${fileName} $out/share/fonts/truetype/
+  '';  
   localFonts = map makeFont fontNames;
   nixFonts = [
     pkgs.nerd-fonts.jetbrains-mono

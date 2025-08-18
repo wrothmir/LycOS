@@ -6,7 +6,7 @@
 
 
 let
-  customFonts = import ./fonts/fonts.nix { inherit pkgs; };
+  fonts = import ./fonts/fonts.nix { inherit pkgs; };
 in
 {
   imports =
@@ -301,7 +301,7 @@ in
     };
   };
 
-  fonts.packages = customFonts;
+  fonts.packages = fonts;
   fonts.fontconfig.defaultFonts = {
     monospace = [
       "JetBrains Mono"
