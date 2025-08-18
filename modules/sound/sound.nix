@@ -127,8 +127,8 @@ in
     ".vst".source  = pkgs.linkFarm "vst-plugins" (pluginLinks vstPlugins "vst");
     ".lv2".source  = pkgs.linkFarm "lv2-plugins" (pluginLinks lv2Plugins "lv2");
 
-    ".config/REAPER/ColorThemes/" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/LycOS/modules/sound/themes";
+    ".config/REAPER/" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/LycOS/modules/sound/reaper/";
       recursive = true;
     };
   };

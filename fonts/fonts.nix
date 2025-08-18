@@ -14,6 +14,10 @@ let
     "SegoeUI.ttf"
     "SegUISB.ttf"
     "Share-Regular.ttf"
+    "Roboto-Bold.ttf"
+    "Roboto-Regular.ttf"
+    "Roboto-Condensed-Regular.ttf"
+    "Roboto-Condensed-Bold.ttf"
   ];
 
   makeFont = fileName: pkgs.runCommand (lib.strings.toLower (lib.strings.replaceStrings [".ttf"] [""] fileName)) {
