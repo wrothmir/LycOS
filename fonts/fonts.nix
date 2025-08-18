@@ -2,14 +2,14 @@
 { pkgs }:
 
 let
-  fontDir = ./;  # relative path to folder containing TTFs
+  fontDir = ./ttfs;  # relative path to folder containing TTFs
 
   # list of fonts: use the exact filename of the TTF
   fontNames = [
     "Cuprum"
-    "OpenSans-Cond Light"
+    "OpenSans-CondLight"
     "OpenSans-Italic"
-    "PT-Sans-Narrow-Web-Regular"
+    "PT_Sans-Narrow-Web-Regular"
     "SegoeUI"
     "SegUISB"
     "Share-Regular"

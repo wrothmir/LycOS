@@ -4,6 +4,10 @@
 
 { config, pkgs, inputs, ... }:
 
+
+let
+  customFonts = import ./fonts/fonts.nix { inherit pkgs; };
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -297,15 +301,7 @@
     };
   };
 
-  fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.droid-sans-mono
-    nerd-fonts.fira-code
-    nerd-fonts.monoid
-    ipafont
-    kochi-substitute
-  ];
-
+  fonts.packages = customFonts;
   fonts.fontconfig.defaultFonts = {
     monospace = [
       "JetBrains Mono"
