@@ -24,6 +24,14 @@ let
     exec pw-jack ${pkgs.reaper}/bin/reaper "$@"
   '';
 
+  hydrogen-pwjack = pkgs.writeShellScriptBin "hydrogen" ''
+    exec pw-jack ${pkgs.hydrogen}/bin/hydrogen "$@"
+  '';
+
+  seq66-pwjack = pkgs.writeShellScriptBin "hydrogen" ''
+    exec pw-jack ${pkgs.seq66}/bin/hydrogen "$@"
+  '';
+
   # VST3 compatible plugins
   vst3Plugins = [
     pkgs.vital
@@ -42,7 +50,14 @@ let
   ];
 
   standalone = [
+    pkgs.reaper
+    pkgs.qjackctl
     pkgs.hydrogen
+    pkgs.seq66
+
+    qjackctl-pwjack
+    reaper-pwjack
+    hydrogen-pwjack
   ];
 in
 {  
@@ -58,9 +73,6 @@ in
     pkgs.yabridge
     pkgs.yabridgectl
     pkgs.wineWowPackages.stable
-
-    qjackctl-pwjack
-    reaper-pwjack
 
   ] ++ standalone ++ vst3Plugins ++ lv2Plugins;
 
