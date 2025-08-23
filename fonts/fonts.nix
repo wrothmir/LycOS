@@ -18,6 +18,8 @@ let
     "Roboto-Regular.ttf"
     "RobotoCondensed-Regular.ttf"
     "RobotoCondensed-Bold.ttf"
+    "FiraSans-Bold.ttf"
+    "FiraSans-Regular.ttf"
   ];
 
   makeFont = fileName: pkgs.runCommand (lib.strings.toLower (lib.strings.replaceStrings [".ttf"] [""] fileName)) {
