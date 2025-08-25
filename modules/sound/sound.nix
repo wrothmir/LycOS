@@ -90,6 +90,25 @@ in
     '';
   };
 
+  xdg.desktopEntries = {
+    qjackctl = {
+      name = "QjackCtl (PipeWire)";
+      exec = "${qjackctl-pwjack}/bin/qjackctl %U";
+      icon = "${pkgs.qjackctl}/share/icons/hicolor/32x32/apps/org.rncbc.qjackctl.png";
+      comment = "QjackCtl wrapped with pw-jack";
+      categories = [ "AudioVideo" "Audio" ];
+    };
+
+    reaper = {
+      name = "REAPER (PipeWire)";
+      exec = "${reaper-pwjack}/bin/reaper %F";
+      icon = "${pkgs.reaper}/share/icons/hicolor/256x256/apps/cockos-reaper.png";
+      comment = "Reaper wrapped with pw-jack";
+      categories = [ "AudioVideo" "Audio" "Recorder" ];
+    };
+  };
+
+
   systemd.user.services.a2jmidid = {
     Unit = {
       Description = "ALSA to JACK MIDI bridge";
