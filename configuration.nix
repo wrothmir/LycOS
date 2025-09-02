@@ -20,6 +20,7 @@ in
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
+  networking.firewall.checkReversePath = false;
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -127,6 +128,8 @@ in
     package = pkgs.usbmuxd2;
   };
 
+  virtualisation.docker.enable = true;
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -134,7 +137,7 @@ in
   users.users.wrothmir = {
     isNormalUser = true;
     description = "wrothmir";
-    extraGroups = [ "networkmanager" "wheel" "audio"];
+    extraGroups = [ "networkmanager" "wheel" "audio" "docker"];
     packages = with pkgs; [
     ];
     shell = pkgs.zsh;
@@ -182,7 +185,37 @@ in
   environment.systemPackages = with pkgs; [
   ];
 
-  programs.nix-ld.dev.enable = true;
+  programs.nix-ld.dev = {
+    enable = true;
+    libraries = with pkgs; [
+      zlib
+      zstd
+      stdenv.cc.cc
+      curl
+      openssl
+      attr
+      libssh
+      bzip2
+      libxml2
+      acl
+      libsodium
+      util-linux
+      xz
+      systemd
+      dbus # libdbus-1.so.3
+      fontconfig # libfontconfig.so.1
+      freetype # libfreetype.so.6
+      glib # libglib-2.0.so.0
+      libGL # libGL.so.1
+      libxkbcommon # libxkbcommon.so.0
+      wayland
+      libxc
+      xorg.libX11 # libX11.so.6
+      xorg.libXcursor
+      xorg.libxcb
+    ];
+  };
+
   programs.appimage = {
     enable = true;
     binfmt = true;

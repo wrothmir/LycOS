@@ -57,8 +57,11 @@
     pkgs.wlsunset
     pkgs.wl-gammarelay-rs
     pkgs.networkmanagerapplet
+    pkgs.xorg.xhost
+
     pkgs.libimobiledevice
     pkgs.ifuse
+
     pkgs.exfat
     pkgs.ntfs3g
     pkgs.toybox
@@ -76,6 +79,8 @@
 
     pkgs.distrobox
     pkgs.lilipod
+    pkgs.docker
+    pkgs.docker-compose
 
     #pkgs.onlyoffice-bin
     pkgs.libreoffice-qt6-fresh
@@ -98,8 +103,15 @@
     pkgs.ghostty
     pkgs.anki-bin
     pkgs.mplayer
+    pkgs.protonvpn-gui
+    pkgs.wireguard-ui
+    pkgs.wireguard-tools
+
+    pkgs.puddletag
+    pkgs.yt-dlp
 
     pkgs.testdisk-qt
+    pkgs.uv
     #pkgs.hypridle
     #pkgs.hyprlock
   ];
@@ -152,6 +164,9 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  programs.docker-cli.enable = true;
+  programs.lazydocker.enable = true;
 
   programs.gitui = {
     enable = true;
