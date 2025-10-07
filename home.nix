@@ -58,6 +58,7 @@
     pkgs.wl-gammarelay-rs
     pkgs.networkmanagerapplet
     pkgs.xorg.xhost
+    pkgs.gnumake42
 
     pkgs.libimobiledevice
     pkgs.ifuse
@@ -92,7 +93,7 @@
     #pkgs.davinci-resolve
     pkgs.fmodex
     pkgs.penpot-desktop
-    pkgs.aseprite
+    #pkgs.aseprite
     pkgs.ldtk
     pkgs.tiled
 
@@ -114,6 +115,7 @@
     pkgs.uv
     #pkgs.hypridle
     #pkgs.hyprlock
+    pkgs.wpsoffice
   ];
 
   nixpkgs.config.allowUnfree = true;
