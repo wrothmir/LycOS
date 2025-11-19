@@ -134,10 +134,12 @@ in
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.groups.uinput = { }; # create the group if it doesn't exist
+
   users.users.wrothmir = {
     isNormalUser = true;
     description = "wrothmir";
-    extraGroups = [ "networkmanager" "wheel" "audio" "docker"];
+    extraGroups = [ "networkmanager" "wheel" "audio" "docker" "uinput" "input"];
     packages = with pkgs; [
     ];
     shell = pkgs.zsh;
@@ -151,6 +153,8 @@ in
 
   services.udev.extraRules = ''
     KERNEL=="snd_seq", MODE="0666"
+    KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
+
   '';
 
   home-manager = {

@@ -71,6 +71,7 @@
     pkgs.librewolf
     pkgs.steam
     pkgs.discord
+    pkgs.kanata
 
     pkgs.steam-run
 
